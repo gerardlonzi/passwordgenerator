@@ -288,7 +288,7 @@ button:hover {
   color: #444;
 }
 input[type="checkbox"]:checked {
-  accent-color: red; /* change la couleur de la coche (support moderne) */
+  accent-color: red;
 }
 .seo-text h2,
 .seo-text h3 {

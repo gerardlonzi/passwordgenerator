@@ -1,6 +1,3 @@
-// =======================
-// 🎯 Sélection des éléments du DOM
-// =======================
 const passwordField = document.getElementById("password");
 const lengthSlider = document.getElementById("length");
 const lengthValue = document.getElementById("lengthValue");
@@ -23,18 +20,12 @@ const copyHistoryBtn = document.getElementById("copyHistory");
 const languageSelect = document.getElementById("languageSelect");
 const darkModeBtn = document.getElementById("toggleDarkMode");
 
-// =======================
-// 🔤 Constantes des caractères
-// =======================
 const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 const NUMBERS = "0123456789";
 const SYMBOLS = "!@#$%^&*()_+-={}[]|:;<>?,./";
 const AMBIGUOUS = "O0Il1";
 
-// =======================
-// 🌐 Traductions
-// =======================
 const translations = {
   fr: {
     language: "Langue :",
@@ -86,11 +77,7 @@ const translations = {
   }
 };
 
-// =======================
-// 🖥️ Gestion de l'affichage de la langue
-// =======================
 function applyLanguage(lang) {
-  // Texte des éléments avec data-i18n
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.dataset.i18n;
     if (translations[lang] && translations[lang][key]) {
@@ -98,7 +85,6 @@ function applyLanguage(lang) {
     }
   });
 
-  // Placeholder des inputs avec data-i18n-placeholder
   document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
     const key = el.dataset.i18nPlaceholder;
     if (translations[lang] && translations[lang][key]) {
@@ -107,7 +93,6 @@ function applyLanguage(lang) {
   });
 }
 
-// Appliquer la langue au chargement de la page
 window.addEventListener("DOMContentLoaded", () => {
   const lang = languageSelect.value || "fr";
   applyLanguage(lang);
@@ -115,22 +100,15 @@ window.addEventListener("DOMContentLoaded", () => {
   updateLengthValue();
 });
 
-// Changement de langue via select
 languageSelect.addEventListener("change", (e) => {
   applyLanguage(e.target.value);
 });
 
-// =======================
-// 🔢 Mise à jour affichage longueur
-// =======================
 lengthSlider.addEventListener("input", updateLengthValue);
 function updateLengthValue() {
   lengthValue.textContent = lengthSlider.value;
 }
 
-// =======================
-// 🔄 Génération du mot de passe
-// =======================
 generateBtn.addEventListener("click", () => {
   const lang = languageSelect.value;
   const length = parseInt(lengthSlider.value);
@@ -158,12 +136,8 @@ generateBtn.addEventListener("click", () => {
   passwordField.value = password;
   updateStrength(password);
 
-  // qrCodeDiv.style.display = "none";
 });
 
-// =======================
-// 💪 Évaluation de la force du mot de passe
-// =======================
 function updateStrength(password) {
   let score = 0;
   if (/[a-z]/.test(password)) score++;
@@ -180,9 +154,6 @@ function updateStrength(password) {
   strengthText.textContent = labels[score] || "-";
 }
 
-// =======================
-// 📋 Copier le mot de passe dans le presse-papiers
-// =======================
 copyBtn.addEventListener("click", () => {
   navigator.clipboard.writeText(passwordField.value);
   copyBtn.textContent = "✅";
@@ -193,9 +164,6 @@ copyBtn.addEventListener("click", () => {
           </svg>`), 2000);
 });
 
-// =======================
-// 👁️ Toggle visibilité mot de passe
-// =======================
 toggleVisibilityBtn.addEventListener("click", () => {
   if (passwordField.type === "text") {
     passwordField.type = "password";
@@ -212,9 +180,6 @@ toggleVisibilityBtn.addEventListener("click", () => {
   }
 });
 
-// =======================
-// ⬇️ Télécharger le mot de passe en fichier texte
-// =======================
 downloadBtn.addEventListener("click", () => {
   const blob = new Blob([passwordField.value], { type: "text/plain" });
   const link = document.createElement("a");
@@ -223,9 +188,6 @@ downloadBtn.addEventListener("click", () => {
   link.click();
 });
 
-// =======================
-// 📱 Afficher QR code du mot de passe
-// =======================
 showQRBtn.addEventListener("click", () => {
   if (passwordField.value) {
     qrCodeDiv.innerHTML = ""
@@ -237,9 +199,6 @@ showQRBtn.addEventListener("click", () => {
   }
 });
 
-// =======================
-// 🌙 Mode sombre
-// =======================
 darkModeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   const isDark = document.body.classList.contains("dark");

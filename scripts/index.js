@@ -1,15 +1,9 @@
-// =======================
-// 🌐 Nationalités supportées
-// =======================
 const nationalities = {
   AU: 'Australia', BR: 'Brazil', CA: 'Canada', CH: 'Switzerland', DE: 'Germany', DK: 'Denmark',
   ES: 'Spain', FI: 'Finland', FR: 'France', GB: 'United Kingdom', IE: 'Ireland', IR: 'Iran',
   NO: 'Norway', NL: 'Netherlands', NZ: 'New Zealand', TR: 'Turkey', US: 'United States'
 };
 
-// =======================
-// 🌍 Traductions
-// =======================
 const translations = {
   fr: {
     title_website: "Générateur d'identités temporaires | Générateur de nom temporaire et aléatoire",
@@ -63,35 +57,23 @@ const translations = {
   }
 };
 
-// =======================
-// 🚀 Initialisation au chargement
-// =======================
 window.addEventListener('DOMContentLoaded', () => {
-  // Détecter la langue du navigateur ('fr' par défaut si commence par 'fr', sinon 'en')
   const lang = navigator.language.startsWith('fr') ? 'fr' : 'en';
 
-  // Initialiser la sélection de langue dans l'interface (élément select avec id 'language')
   const languageSelect = document.getElementById('language');
   if(languageSelect) languageSelect.value = lang;
 
-  // Appliquer les traductions
   applyLanguage(lang);
 
-  // Remplir la liste des nationalités
   populateNationalities();
 
-  // Générer une identité au chargement
   generateIdentities(1);
 
-  // Restaurer le mode sombre si nécessaire
   if (localStorage.getItem("darkMode") === "true") {
     document.body.classList.add("dark");
   }
 });
 
-// =======================
-// 🔁 Gestion du changement de langue
-// =======================
 const languageSelect = document.getElementById('language');
 if(languageSelect){
   languageSelect.addEventListener('change', (e) => {
@@ -99,9 +81,6 @@ if(languageSelect){
   });
 }
 
-// =======================
-// 📝 Appliquer les traductions sur les éléments avec data-i18n
-// =======================
 function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
@@ -110,13 +89,9 @@ function applyLanguage(lang) {
     }
   });
 
-  // Traduire aussi les cartes affichées
   translateIdentityCards(lang);
 }
 
-// =======================
-// 🌐 Remplir la liste déroulante des nationalités
-// =======================
 function populateNationalities() {
   const select = document.getElementById('nationality');
   if (!select) return;
@@ -130,9 +105,6 @@ function populateNationalities() {
   }
 }
 
-// =======================
-// 🔄 Génération des identités via API
-// =======================
 function generateIdentities(count = null) {
   const gender = document.getElementById('gender')?.value || '';
   const nat = document.getElementById('nationality')?.value || '';
@@ -149,9 +121,6 @@ function generateIdentities(count = null) {
     .catch(() => showLoader(false));
 }
 
-// =======================
-// 👤 Afficher les identités dans le DOM
-// =======================
 function displayIdentities(people) {
   const container = document.getElementById('output');
   if (!container) return;
@@ -180,14 +149,10 @@ function displayIdentities(people) {
     container.appendChild(card);
   });
 
-  // Ré-appliquer la langue active
   const currentLang = document.getElementById('language')?.value || 'fr';
   applyLanguage(currentLang);
 }
 
-// =======================
-// 🔁 Traduire les cartes existantes (appliquer les labels traduits)
-// =======================
 function translateIdentityCards(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
@@ -197,9 +162,6 @@ function translateIdentityCards(lang) {
   });
 }
 
-// =======================
-// 📋 Copier le texte affiché dans #output
-// =======================
 function copyToClipboard() {
   const text = document.getElementById('output')?.innerText || '';
   const btn_copy = document.querySelector('.btn-copy')
@@ -211,9 +173,6 @@ function copyToClipboard() {
   });
 }
 
-// =======================
-// 📦 Export JSON des identités générées
-// =======================
 function exportJSON() {
   const gender = document.getElementById('gender')?.value || '';
   const nat = document.getElementById('nationality')?.value || '';
@@ -231,9 +190,6 @@ function exportJSON() {
     });
 }
 
-// =======================
-// 🌙 Mode sombre toggle
-// =======================
 const darkModeBtn = document.getElementById("toggleDarkMode");
 if(darkModeBtn){
   darkModeBtn.addEventListener("click", () => {
@@ -242,9 +198,6 @@ if(darkModeBtn){
   });
 }
 
-// =======================
-// 📋 Copier l’historique (si bouton présent)
-// =======================
 const copyHistoryBtn = document.getElementById("copyHistory");
 if (copyHistoryBtn) {
   copyHistoryBtn.addEventListener("click", () => {
@@ -260,9 +213,6 @@ if (copyHistoryBtn) {
   });
 }
 
-// =======================
-// 🔄 Affichage du loader
-// =======================
 function showLoader(show) {
   const loader = document.getElementById('loader');
   if (loader) loader.style.display = show ? 'block' : 'none';
