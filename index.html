@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title_website">Fake name Generator - Generate Random names </title>
+  <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="shortcut icon" href="assets/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="assets/site.webmanifest" />
+  <meta name="description"
+    content="Generate temporary identities with photo, address, country,name generator, fake, generator, identity,random  and more. Useful for testing, anonymization, login, and web development." />
+  <meta name="application-name" content="Random Identity and password Generator">
+  <meta name="application-name" content="Random Identity and password Generator">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <!-- SEO / Open Graph / Twitter -->
+  <meta property="og:title" content="Get a whole new identity at the Fake Name Generator">
+  <meta property="og:description"
+    content="The most advanced fake name generator. Generate random names, addresses, usernames, passwords, email addresses, and more. Use for software testing, social media, or anything else.">
+  <meta property="og:image" content="https://yourdomain.com/assets/preview.png" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" href="/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="style.css">
+  </noscript>
+</head>
+
+<body>
+  <header class="header">
+    <p class="logo"><a href=""><img src="assets/R (2).svg" alt=""></a></p>
+    <div class="menu">
+      <a data-i18n="link1" href="/">Identity Generator</a>
+      <a data-i18n="link2" href="password-generator.html">Password Generator</a>
+
+    </div>
+    <div class="controls-tools">
+      <button id="toggleDarkMode"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+          <path
+            d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+        </svg></button>
+      <div class="controls">
+        
+        <select id="language">
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <!-- <header class="header-responsive">
+    <p class="logo"><a href=""><img src="assets/R (2).svg" alt=""></a></p>
+    <div class="allMenu">
+      <div class="menu">
+        <a data-i18n="link1" href="/">Identity Generator</a>
+        <a data-i18n="link2" href="password-generator.html">Password Generator</a>
+        
+      </div>
+      <div class="hamburger-menu">
+        <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg></button>
+      </div>
+      <div class="controls-tools">
+        <button id="toggleDarkMode"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+            <path
+              d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+          </svg></button>
+        <div class="controls">
+          
+          <select id="language">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+
+
+    je souhaite cree une plateforme de find love simple qui : donne la possibiliter a l'utisateur de s'inscrire par email,number,google, apres inscription prend les information de l'utilisateur comme l'age, le sexe, la ville de residence,deux photo etc (et d'autres information que tu trouve utilie) .puis sur une autre page ou par onboarding demande les caracteristique du type de personne quel souhaite (notons que les questions de l'utilisateur et du type de partenaire recherche doit etre les meme puisque ces donne servirons pour d'autres utilisateur qui rechera un partenaire du meme genre) , apres ceci un mapage automatique doit etre lancer si une personne ou plusieurs personnne correspond a 60% a ces caracteristique on l'affiche de facon flouter et l'utilisateur devra payer un abonnement de 5000F par mois. Si aucun utilisateur est trouver on dit a l'utilisateur que nous faisons des recherche sur des plateforme commme facebook tiktok et autre et qu'on envoyera des notifications par whatssapp une fois des correspondance trouver 
+  </header> -->
+  <main class="containers">
+    <h1 data-i18n="title">Fake Identity Generator | fake name Generator | Random Name Generator | Ramdom Identity
+      Generator </h1>
+    <div class="allpart">
+      <div class="controls">
+        <div class="rt">
+
+          <div>
+            <label for="gender" data-i18n="gender">Gender:</label>
+            <select id="gender">
+              <option value="">Any</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+
+          </div>
+          <div>
+            <label for="nationality" data-i18n="nationality">Nationality:</label>
+            <select id="nationality"></select>
+
+          </div>
+          <div>
+            <label for="count" data-i18n="count">How many?</label>
+            <input type="number" id="count" min="1" max="10" value="1" />
+
+          </div>
+        </div>
+
+        <button onclick="generateIdentities()" data-i18n="generate">Generate</button>
+
+
+      </div>
+      <div>
+        <section id="output">
+          <!-- Loader -->
+          <div id="loader" class="loader-container" style="display: none;">
+            <div class="spinner"></div>
+          </div>
+          
+      
+        </section>
+        <div class="export-buttons">
+          <div>
+            <button onclick="copyToClipboard()" class="button-copy" ><span data-i18n="copy" class="btn-copy">Copy All </span ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-clipboard-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2"/>
+            </svg></button>
+
+          </div>
+          <button onclick="exportJSON()" > <span data-i18n="export">Export JSON</span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-up-fill" viewBox="0 0 16 16">
+            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6.354 9.854a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 8.707V12.5a.5.5 0 0 1-1 0V8.707z"/>
+          </svg></button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 - Fake Identity Generator. For educational and testing purposes only.</p>
+  </footer>
+  <script src="/scripts/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

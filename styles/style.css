@@ -1,0 +1,497 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 150px;
+  background-color: rgb(34, 34, 34);
+  padding-block: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.logo{
+  margin-bottom: 0;
+}
+header .controls{
+  align-items: center;
+}
+.logo span {
+  color: red;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(193, 193, 193);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: white;
+}
+
+header,
+footer {
+  text-align: center;
+}
+footer{
+ margin-top: 400px;
+ padding: 30px;
+ background-color: #1e1e1e;
+ color: white;
+}
+.toggleDarkMode i {
+  width: 10px;
+  height: 10px;
+}
+.allpart{
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 30px;
+  box-shadow: 0px 0px 7px gray;
+  background-color: #f0f0f0;
+}
+.allpart .controls{
+  flex-direction: column;
+}
+.rt{
+  display: flex;
+  gap: 20px;
+}
+.rt select,.rt input{
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+}
+#qrcode{
+  display: flex;
+  margin-top: 25px;
+  margin-left: 300px;
+}
+.allpart .controls button{
+  padding-block: 18px;
+}
+.containers {
+  padding-inline: 290px;
+}
+
+.controls-tools {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#language,#languageSelect{
+  background-color: transparent;
+  padding-inline: 10px;
+  color: white;
+}
+
+#language option,#languageSelect option {
+  color: #121212;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: 160px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.controls select {
+  padding: 6px;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-top: 7px;
+}
+.controls input{
+  border: none;
+  border: 1px solid rgb(255, 255, 255);
+  padding-block: 1px;
+  border-radius: 5px;
+  margin-top: 8px;
+
+}
+
+button {
+  padding: 10px 15px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b40000;
+}
+
+#identities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.image-container {
+  background-color: gainsboro;
+  width: 130px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.local{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.output-group{
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.output-group input{
+  display: block;
+  width: 100%;
+  padding-block: 20px;
+  padding-inline: 10px;
+  outline: none;
+  border: black 2px solid;
+  background-color: rgb(236, 236, 236);
+  font-size: 25px;
+}
+.settings{
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+  gap: 15px;
+}
+.settings input{
+  height: 20px;
+  width:20px;
+}
+.settings input[type="range"]{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 20px;
+  background: #ffd1d1;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s;
+}
+.settings input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #d50000;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+.settings input[type="range"]::-webkit-slider-thumb:hover {
+  background: #d70000;
+}
+
+.settings label{
+  font-size: 20px;
+}
+.export-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+.allocal{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.export-buttons button,.output-group button,.tools button,.local button{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tools{
+  display:flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  gap: 10px;
+}
+.tools div{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#generate{
+  width: 100%;
+  padding-block: 20px;
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.seo-text {
+  margin-top: 40px;
+  font-size: 0.95rem;
+  color: #444;
+}
+input[type="checkbox"]:checked {
+  accent-color: red; /* change la couleur de la coche (support moderne) */
+}
+.seo-text h2,
+.seo-text h3 {
+  color: #333;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #a80000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+.rt{
+  flex-wrap: wrap;
+}
+.rt input,.rt select{
+  display: block;
+}
+.controls{
+  width: 100%;
+  align-items: center;
+}
+.controls button{
+  width: 100%;
+}
+
+#output{
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+
+}
+.export-buttons{
+  margin-top: 70px;
+}
+.identity-card{
+  padding: 10px;
+  border-left: solid 1px gray;
+
+}
+.allpart{
+  flex-direction: column;
+}
+.hamburger-menu{
+  display: none;
+}
+.header-responsive{
+  display: none;
+}
+body.dark h1{
+  color: white;
+}
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+body.dark .allpart{
+  background-color: #232323;
+}
+body.dark .container {
+  background: #1e1e1e;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+
+body.dark button {
+  background: #ff0000;
+  color: #e0e0e0;
+  border: none;
+}
+body.dark select,body.dark input{
+  color: white;
+}
+body.dark   input{
+  color: rgb(0, 0, 0);
+}
+body.dark .controls  input{
+  color: rgb(255, 255, 255);
+}
+
+body.dark option{
+  color: black;
+}
+
+body.dark input::placeholder {
+  color: #aaa;
+}
+
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width:1189px) {
+  header{
+    padding-inline: 10px;
+  }
+  .containers{
+    padding-inline: 10px;
+  }
+  #qrcode{
+    margin-left: 300px;
+  }
+  .header-desk{
+    display: none;
+  }
+  .header-responsive{
+    display: flex;
+    flex-direction: column;
+  }
+.header-responsive .allMenu{
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+}
+
+
+}
+@media screen and (max-width:615px) {
+  #output{
+    grid-template-columns: repeat(1,1fr);
+
+  }
+  .tools{
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+  .output-group input{
+    font-size: 12px;
+    padding-block: 12px;
+  }
+  .settings{
+    margin-top: 0px;
+  }
+  h1{
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .settings span{
+font-size: 12px;
+  }
+  #qrcode{
+    margin-left: 100px;
+  }
+  #generate{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width:741px) {
+
+.menu{
+  display: none;
+}
+#strength{
+  margin-top: 30px;
+}
+
+.hamburger-menu{
+  display: block;
+}
+.hamburger-menu button{
+  background: transparent;
+}
+header{
+  flex-direction: column;
+}
+footer{
+  margin-top: 60px;
+}
+#toggleDarkMode{
+  background-color: transparent;
+  padding: 0;
+}
+.controls{
+  margin: 0;
+}
+header .controls label{
+  display: none;
+}
+.rt input{width: 100%;display: block;
+}
+h1{
+  margin-top: 140px;
+  margin-bottom: 20px;
+
+}
+.allpart .controls button,#generate{
+  padding-block: 15px;
+}
+.settings input[type="checkbox"]{
+  width: 12px;
+  height: 12px;
+}
+}
