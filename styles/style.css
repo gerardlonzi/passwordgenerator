@@ -429,7 +429,7 @@ width: 100%;
     font-size: 12px;
   }
   .output-group input{
-    font-size: 12px;
+    font-size: 14px;
     padding-block: 12px;
   }
   .settings{
@@ -440,7 +440,7 @@ width: 100%;
     line-height: 25px;
   }
   .settings span{
-font-size: 12px;
+font-size: 14px;
   }
   #qrcode{
     margin-left: 100px;
@@ -491,7 +491,7 @@ h1{
   padding-block: 15px;
 }
 .settings input[type="checkbox"]{
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
 }
 }
